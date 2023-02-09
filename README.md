@@ -9,21 +9,6 @@ In this project, you will apply the skills you have acquired in this course to o
 You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
 
----
-### Short description of folders and files in the repo
-
-* [.circleci](https://github.com/NfoTECH/project-ml-microservice-kubernetes/tree/main/.circleci): For the CircleCI build server
-* [model_data](/https://github.com/NfoTECH/project-ml-microservice-kubernetes/tree/main/model_data) : this folder contains the pretrained `sklearn` model and housing csv files
-* [output_txt_files](/https://github.com/NfoTECH/project-ml-microservice-kubernetes/tree/main/output_txt_files): folder contains sample output logs from running `./run_docker.sh` and `./run_kubernetes.sh`
-* [app.py](/https://github.com/NfoTECH/project-ml-microservice-kubernetes/tree/main/app.py) : contains the flask app
-* [Dockerfile](/https://github.com/NfoTECH/project-ml-microservice-kubernetes/tree/main/app.py): contains instructions to containerize the application
-* [Makefile](/https://github.com/NfoTECH/project-ml-microservice-kubernetes/tree/main/Makefile) : contains instructions for environment setup and lint tests
-* [requirements.txt](/https://github.com/NfoTECH/project-ml-microservice-kubernetes/tree/main/requirements.txt): list of required dependencies
-* [run_docker.sh](/https://github.com/NfoTECH/project-ml-microservice-kubernetes/tree/main/run_docker.sh): bash script to build Docker image and run the application in a Docker container
-* [upload_docker.sh](/https://github.com/NfoTECH/project-ml-microservice-kubernetes/tree/main/upload_docker.sh): bash script to upload the built Docker image to Dockerhub
-* [run_kubernetes.sh](/https://github.com/NfoTECH/project-ml-microservice-kubernetes/tree/main/run_kubernetes.sh): bash script to run the application in a Kubernetes cluster
-* [make_prediction.sh](/https://github.com/NfoTECH/project-ml-microservice-kubernetes/tree/main/make_prediction.sh): bash script to make predictions against the Docker container and k8s cluster
-* [README.md](/https://github.com/NfoTECH/project-ml-microservice-kubernetes/tree/main/README.md): this README file
 
 
 ## Setup the Environment
