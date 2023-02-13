@@ -1,0 +1,56 @@
+
+STEPS TO COMPLETE THE DEVOPS PROJECT 4.
+OPERATIONALIZE A MACHINE LEARNING MICROSERVICE API
+TECHNOLOGIES USED: DOCKER, KUBERNETES, BASH, SHELL, AWS
+
+1. Create and Resize AWS Cloud9 Environment
+- Create a new AWS Cloud9 environment using t3.2xlarge instance type (8 vCPU, 32GB RAM)
+- Move into the directory with the resize.sh file
+-execute using: (bash resize.sh 100) to resize the cloud9 environment to 100GB
+
+2. Complete Makefile and install Tools in your virtual environment
+- Move into the directory with the Makefile
+- Execute: (make setup) to install the necessary tools
+- Execute: (source ~/.devops/bin/activate) to enter into the virtual env created inside the makefile using python3 -m venv ~/.devops
+- Execute: (make install) to install the necessary python packages and dependencies
+- Execute: (make lint) to check for linting errors in the code using pylint (10/10 for no errors) 
+- Install miniKube using (curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64) then
+- (sudo install minikube-linux-amd64 /usr/local/bin/minikube) to install minikube
+- Install kubectl using (curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl") then
+- (sudo chmod +x ./kubectl) to make the file executable then
+- (sudo mv ./kubectl /usr/local/bin/kubectl) to move the file to the bin directory
+
+3. Be sure your Dockerfile is in the project root directory and complete the Dockerfile
+
+4. Build and Run the Docker Container and make a prediction
+- Add a descriptive tag to the docker image using (docker build --tag=username/name-of-image .) in the run_docker.sh file
+- Add the run docker container command using (docker run -p 8000:80 username/name-of-image) in the run_docker.sh file
+- execute: (bash run_docker.sh) to run the docker container
+- execute: (bash make_prediction.sh) to make a prediction in another terminal window in the virtual environment using make setup
+
+5. Improve Logging and save output logs   
+- Add the output prediction value in the app.py file and run bash make_prediction.sh to see the output
+
+6. Upload the Docker Image to Docker Hub
+- Complete the upload_docker.sh file with the docker login and docker push commands
+- execute: (bash upload_docker.sh) to upload the docker image to docker hub
+
+7. Deploy the Docker Image to Kubernetes
+- Complete the run_kubernetes.sh file with the kubectl run and kubectl port-forward commands
+-execute: (miniKube start) to start minikube
+-execute: (bash run_kubernetes.sh) to run the docker image in kubernetes
+-execute: (bash make_prediction.sh) to make a prediction in another terminal window in the virtual environment using make setup
+
+8. Create a CircleCI account and configure the project
+- Create a CircleCI account and link it to your github account
+- execute: (mkdir .circleci) to create a circleci directory
+- move into the circleci directory
+- execute: (touch config.yml) to create a config.yml file inside the circleci directory
+- complete the config.yml file with the necessary commands to run the project
+- push the project to github to trigger the circleci build
+- check the circleci build to see if it was successful
+- go to the circleci dashboard and click on the project settings
+- click on status badges and copy the markdown code
+- paste the markdown code in the README.md file in the project root directory
+- push the project to github to trigger the circleci build
+- check the circleci build to see if it was successful
