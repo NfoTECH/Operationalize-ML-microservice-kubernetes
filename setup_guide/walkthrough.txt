@@ -47,6 +47,10 @@ TECHNOLOGIES USED: DOCKER, KUBERNETES, BASH, SHELL, AWS
 - move into the circleci directory
 - execute: (touch config.yml) to create a config.yml file inside the circleci directory
 - complete the config.yml file with the necessary commands to run the project
+- execute (ssh-keygen -t rsa) to generate a pair of SSH keys, for Cloud9 env to be able to push changes to the Github repo
+- execute (cat /home/ec2-user/.ssh/id_rsa.pub) to view the contents of the public key
+- copy the contents of the public key in /home/ec2-user/.ssh/id_rsa.pub and paste it in the github account settings (SSH & GPG keys)
+- clone the project from github to the cloud9 environment using the SSH repository link, add and commit the changes
 - push the project to github to trigger the circleci build
 - check the circleci build to see if it was successful
 - go to the circleci dashboard and click on the project settings
