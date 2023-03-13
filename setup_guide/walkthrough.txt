@@ -44,7 +44,7 @@ TECHNOLOGIES USED: DOCKER, KUBERNETES, BASH, SHELL, AWS
 
 7. Deploy the Docker Image to Kubernetes
 - Complete the run_kubernetes.sh file with the kubectl run and kubectl port-forward commands
--execute: (miniKube start) to start minikube
+-execute: (minikube start) to start minikube
 -execute: (bash run_kubernetes.sh) to run the docker image in kubernetes
 -execute: (bash make_prediction.sh) to make a prediction in another terminal window in the virtual environment using make setup
 
